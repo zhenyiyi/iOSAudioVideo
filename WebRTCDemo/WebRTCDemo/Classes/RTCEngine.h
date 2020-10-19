@@ -6,10 +6,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RTCEngine : NSObject
+
++ (instancetype)shared;
+
+- (void)startAudio;
+
+- (void)startVideoWithView:(UIView *)view;
+
+- (void)startPreview:(UIView *)view;
 
 @end
 

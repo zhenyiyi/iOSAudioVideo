@@ -7,8 +7,13 @@
 
 #import "ViewController.h"
 #import <AVFoundation/AVCaptureDevice.h>
+#import "RTCEngine.h"
+#import <WebRTC/WebRTC.h>
 
 @interface ViewController ()
+{
+    RTCEngine *_engine;
+}
 
 @end
 
@@ -16,9 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray<AVCaptureDevice *> *devices = [AVCaptureDevice devices];
-    NSLog(@"%@",devices);
+    [[RTCEngine shared] startPreview:self.view];
 }
 
 
+
 @end
+
+
+
